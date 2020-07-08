@@ -1,5 +1,21 @@
 .place {
   width: 100%;
+  height: 100%;
+  padding: 0;
+  &__back{
+    position: fixed;
+    background-color: #fff;
+    width: 100%;
+    padding-left: 5%;
+
+    @include media(desktop) {
+    display: none;
+    }
+    
+    span{
+      font-size: 22px;
+    }
+  }
   &__informations {
     width: 100%;
     h2 {

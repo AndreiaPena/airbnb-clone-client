@@ -1,15 +1,29 @@
 import React from 'react';
-import '../sass/components/_header.scss';
 import { Link } from 'react-router-dom';
-import logoAirbnb from '../images/airbnb-1.svg';
-import logoAccount from '../images/user.svg';
 
-export default function Navigation (){
+export default function Navigation() {
   return (
-    <nav className="navigation">
-      <Link className="navigation__link" to="/"><img className="navigation__link__imgHome" src={logoAirbnb} alt="" />Home</Link>
-      <Link className="navigation__link" to="/signin"><img className="navigation__link__imgAccount" src={logoAccount} alt="" />Connexion</Link>
-      <Link className="navigation__link" to="/signup"><img className="navigation__link__imgAccount" src={logoAccount} alt="" />Inscription</Link>
-    </nav>
+    <div>
+      <nav className="navigation">
+        <div className="navigation__button">
+          <Link to="/">
+            <img src="airbnb-1.svg" alt="img" />
+            <h3>Home</h3>
+          </Link>
+        </div>
+        <div className="navigation__button">
+          <Link to="/signup">
+            <img src="user.svg" alt="img" />
+            <h3>Inscription</h3>
+          </Link>
+        </div>
+        <div className="navigation__button">
+          <Link to="/signin">
+            <img src="user.svg" alt="img" />
+            <h3>Connexion</h3>
+          </Link>
+        </div>
+      </nav>
+    </div>
   );
-};
+}

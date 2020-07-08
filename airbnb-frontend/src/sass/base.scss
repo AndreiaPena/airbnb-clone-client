@@ -1,19 +1,12 @@
-$colorwhite: white;
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-size: 16px;
-  text-decoration: none;
+*{
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, Helvetica Neue, sans-serif;
-  overflow-x: hidden;
-  color:  #222222;;
-  body {
-    background-color: $colorwhite;
-    h1 {
-      color: $colorwhite;
-    }
-  }
+  line-height: 1.75;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}

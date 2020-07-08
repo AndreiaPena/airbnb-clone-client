@@ -1,6 +1,5 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import imgPlace from '../images/img-place.jpg';
 import { Link } from 'react-router-dom';
 
 export default function Home() {
@@ -14,20 +13,19 @@ export default function Home() {
     fetchData();
   }, []);
   return (
-    <section className="home">
-      <div className="home__cacheMenu"></div>
+    <section>
       {data.map((place, i) => (
-        <Fragment>
-          <div className="home__place">
-            <img className="home__place__img" src={imgPlace} alt="" />
-            <Link className="home__place__link" to={`/places/${place.id}`}>
+        <div className="places">
+          <Link to={`/places/${place.id}`}>
+            <img className="places__picture" src="img-place.jpg" alt="" />
+            <div className="places__description">
               <h2 key={i}>{place.name}</h2>
-            </Link>
-            <p>
-              <span>{place.price_by_night}€</span> / nuit
-            </p>
-          </div>
-        </Fragment>
+              <p>
+                <span>{place.price_by_night}€</span> / nuit
+              </p>
+            </div>
+          </Link>
+        </div>
       ))}
     </section>
   );

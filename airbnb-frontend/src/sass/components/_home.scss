@@ -1,27 +1,57 @@
-.home {
-  background-color: white;
-  &__place {
-    background-color: white;
-    width: 80%;
-    padding-top: 10%;
-    margin: 0 auto;
-    &__img {
-      width: 100%;
-      border-radius: 10px;
+section {
+  padding: 5%;
+  display: flex;
+  flex-direction: column;
+
+  @include media(tablet) {
+    padding: 2%;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+
+  @include media(desktop) {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  .places {
+    width: 90%;
+    margin: 5% auto;
+
+    @include media(tablet) {
+      width: 31%;
+      margin: 1.5% 1%;
     }
-    &__link{
-      h2 {
-        color:blue;
-        padding: 2% 0;
-        font-weight: 100;
-        font-size: 0.9em;
+
+    @include media(desktop) {
+      width: 23%;
+      margin: 1%;
+    }
+
+    img {
+      width: 100%;
+      height: 50vh;
+
+      @include media(tablet) {
+        height: 27.5vh;
+      }
+
+      @include media(desktop) {
+        height: 27.5vh;
       }
     }
-    p {
-      span {
-        font-weight: 600;
+    &__picture {
+      border-radius: 10px;
+      object-fit: cover;
+    }
+    &__description {
+      width: 100%;
+      h2 {
+        font-size: 20px;
+        font-weight: 500;
+        text-overflow: ellipsis;
+        overflow-x: hidden;
+        white-space: nowrap;
       }
     }
   }
 }
-
