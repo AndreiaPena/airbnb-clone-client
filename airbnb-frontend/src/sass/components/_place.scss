@@ -1,0 +1,33 @@
+.place {
+  width: 100%;
+  &__informations {
+    width: 100%;
+    h2 {
+      font-size: 1.5em;
+      padding: 5% 5%;
+      font-weight: 600;
+    }
+    img {
+      width: 100%;
+    }
+    hr {
+      border: 0.5px solid rgba(184, 184, 184, 0.329);
+      width: 50%;
+      margin: 0 auto;
+    }
+    &__details {
+      padding: 3% 0;
+      display: flex;
+      justify-content: center;
+      p {
+        font-size: 0.9em;
+      }
+      .space {
+        padding-right: 2%;
+      }
+    }
+    &__description{
+        padding: 5% 5%;
+    }
+  }
+}

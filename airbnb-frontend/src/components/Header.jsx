@@ -1,12 +1,11 @@
-import React from "react";
+import React from 'react';
+import '../sass/components/_header.scss';
+import Navigation from './Navigation';
 
-export const Header = () => {
+export default function Header() {
   return (
-    <nav id="navigation">
-      <h1 href="#" className="logo">
-        Airbnb
-      </h1>
-    </nav>
+    <header>
+      <Navigation />
+    </header>
   );
 };
-export default Header;

@@ -1,25 +1,17 @@
-import React from 'react';
-import './App.scss';
+import React from "react";
+import "./sass/App.scss";
+import Header from "./components/Header";
+import Routes from "./components/Routes";
+import Footer from "./components/Footer";
 
+import { BrowserRouter as Router } from "react-router-dom";
 
-function App() {
+export default function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Header />
+      <Routes />
+      <Footer />
+    </Router>
   );
 }
-
-export default App;

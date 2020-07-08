@@ -1,0 +1,34 @@
+header {
+  background-color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-top: 1px solid rgba(121, 121, 121, 0.678);
+  // @include media(tablet) {
+  //   top: 0;
+  //   background-color: blue;
+  // }
+  // @include media(desktop) {
+  //   top: 0;
+  //   background-color: green;
+  // }
+  .navigation {
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+    padding: 2% 0;
+    &__link {
+      flex: 1;
+      font-size: 0.7em;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      &__imgHome {
+        width: 19%;
+      }
+      &__imgAccount {
+        width: 20%;
+      }
+    }
+  }
+}
