@@ -4,6 +4,9 @@ header {
   bottom: 0;
   width: 100vw;
   border-top: 1px solid rgba(122, 122, 122, 0.507);
+  // @include media(desktop){
+  // top: 0;
+  // }
 }
 
 .navigation {

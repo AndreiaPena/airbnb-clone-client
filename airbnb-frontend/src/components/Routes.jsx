@@ -20,7 +20,7 @@ export default function Routes() {
       <Route path="/places/:id">
         <Place />
       </Route>
-      
+
       <Route path="/">
         <Home />
       </Route>
