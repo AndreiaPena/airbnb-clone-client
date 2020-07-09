@@ -13,13 +13,13 @@ export default function Navigation() {
         </div>
         <div className="navigation__button">
           <Link to="/signup">
-            <img src="user.svg" alt="img" />
+            <img src="user.svg" alt="img2" />
             <h3>Inscription</h3>
           </Link>
         </div>
         <div className="navigation__button">
           <Link to="/signin">
-            <img src="user.svg" alt="img" />
+            <img src="user.svg" alt="img2" />
             <h3>Connexion</h3>
           </Link>
         </div>

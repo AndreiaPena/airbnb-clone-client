@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, Link } from 'react-router-dom';
-import PlacePicture from '../images/test.jpg';
 
 export default function Place() {
   const [Place, setPlace] = useState([]);
@@ -15,7 +14,7 @@ export default function Place() {
     };
     fetchData();
   }, [id]);
-// console.log( Place.City.name)
+  console.log( "ICCICIICICICICI" +Place)
   return (
     <section className="place">
       <div className="place__back">
@@ -24,7 +23,7 @@ export default function Place() {
         </Link>
       </div>
       <div className="place__informations">
-        <img src={PlacePicture} alt="" />
+        <img src={Place.pictures} alt="" />
         <h2>{Place.name}</h2>
         <h3>{Place['City.name']}</h3>
         <hr />

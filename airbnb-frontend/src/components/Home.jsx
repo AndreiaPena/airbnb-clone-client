@@ -12,12 +12,13 @@ export default function Home() {
     };
     fetchData();
   }, []);
+  console.log(data)
   return (
     <section>
       {data.map((place, i) => (
         <div className="places">
           <Link to={`/places/${place.id}`}>
-            <img className="places__picture" src="img-place.jpg" alt="" />
+            <img className="places__picture" src={place.pictures} alt="" />
             <div className="places__description">
               <h2 key={i}>{place.name}</h2>
               <p>
