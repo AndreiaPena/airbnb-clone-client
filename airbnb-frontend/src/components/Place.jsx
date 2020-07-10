@@ -1,20 +1,23 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, Link } from 'react-router-dom';
+import { AuthContext } from "./Routes";
 
 export default function Place() {
   const [Place, setPlace] = useState([]);
-  // faire un useState pour city.name (voir projet wordpress)
   const { id } = useParams();
-
+  const { state: authState } = React.useContext(AuthContext);
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios(`http://localhost:8060/api/places/${id}`);
+      const result = await axios(`http://localhost:8060/api/places/${id}`, {
+        headers: {
+          Authorization: `Bearer ${authState.token}`
+        },
+      });
       setPlace(result.data);
     };
     fetchData();
   }, [id]);
-  console.log( "ICCICIICICICICI" +Place)
   return (
     <section className="place">
       <div className="place__back">
