@@ -12,9 +12,14 @@ export default function Home() {
     };
     fetchData();
   }, []);
-  console.log(data)
   return (
     <section>
+      <div className="searchContainer">
+        <div className="searchContainer__searchBar">
+          <img src="search.png" alt="" />
+          <input type="text" placeholder="Où allez-vous ?" />
+        </div>
+      </div>
       {data.map((place, i) => (
         <div className="places">
           <Link to={`/places/${place.id}`}>
@@ -22,7 +27,7 @@ export default function Home() {
             <div className="places__description">
               <h2 key={i}>{place.name}</h2>
               <p>
-                <span>{place.price_by_night}€</span> / nuit
+                <span> {place.price_by_night}€</span> / nuit
               </p>
             </div>
           </Link>

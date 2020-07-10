@@ -1,10 +1,9 @@
 import React from 'react';
+import { Switch, Route } from 'react-router-dom';
 import Home from './Home';
 import Place from './Place';
 import Signup from './Signup';
 import Signin from './Signin';
-
-import { Switch, Route } from 'react-router-dom';
 
 export default function Routes() {
   return (
