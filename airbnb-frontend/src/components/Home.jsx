@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { Link } from 'react-router-dom';
+import Search from './Search';
 
 export default function Home() {
   const [data, setData] = useState([]);
@@ -14,12 +15,7 @@ export default function Home() {
   }, []);
   return (
     <section>
-      <div className="searchContainer">
-        <div className="searchContainer__searchBar">
-          <img src="search.png" alt="" />
-          <input type="text" placeholder="Où allez-vous ?" />
-        </div>
-      </div>
+      <Search />
       {data.map((place, i) => (
         <div className="places">
           <Link to={`/places/${place.id}`}>

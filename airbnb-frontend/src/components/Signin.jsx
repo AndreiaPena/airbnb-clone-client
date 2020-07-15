@@ -10,6 +10,7 @@ export const Signin = () => {
     isSubmitting: false,
     errorMessage: null,
   };
+
   const [data, setData] = React.useState(initialState);
   const handleInputChange = (event) => {
     setData({
@@ -24,25 +25,24 @@ export const Signin = () => {
       isSubmitting: true,
       errorMessage: null,
     });
-    axios('http://localhost:8060/api/signin', {
+    axios({
       method: 'post',
-      headers: {
-        'Content-Type': 'application/x-www-form-urlencoded',
-      },
-      body: JSON.stringify({
-        username: data.email,
+      headers: { 'Content-Type': 'application/json' },
+      url: 'http://localhost:8060/api/signin',
+      data: JSON.stringify({
+        email: data.email,
         password: data.password,
       }),
     })
       .then((res) => {
-        if (res.ok) {
-          return res.json();
+        if (res.status === 200) {
+          return res;
         }
         throw res;
       })
       .then((resJson) => {
         dispatch({
-          type: 'LOGIN',
+          type: 'SIGNIN',
           payload: resJson,
         });
       })
@@ -54,7 +54,6 @@ export const Signin = () => {
         });
       });
   };
-  console.log(data);
   return (
     <div className="login-container">
       <div className="card">

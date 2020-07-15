@@ -1,17 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import { useParams, Link } from 'react-router-dom';
-import { AuthContext } from "./Routes";
+import { AuthContext } from './Routes';
 
 export default function Place() {
   const [Place, setPlace] = useState([]);
   const { id } = useParams();
   const { state: authState } = React.useContext(AuthContext);
+
   useEffect(() => {
     const fetchData = async () => {
       const result = await axios(`http://localhost:8060/api/places/${id}`, {
         headers: {
-          Authorization: `Bearer ${authState.token}`
+          Authorization: `Bearer ${authState.token}`,
         },
       });
       setPlace(result.data);
