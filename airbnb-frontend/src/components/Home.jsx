@@ -6,16 +6,23 @@ import Search from './Search';
 export default function Home() {
   const [data, setData] = useState([]);
 
+  const search = (searchValue) => {
+    const fetchData = async () => {
+      const result = await axios(`http://localhost:8060/api/places?city=${searchValue}`);
+      setData(result.data);
+    };
+    fetchData();
+  };
   useEffect(() => {
     const fetchData = async () => {
-      const result = await axios('http://localhost:8060/api/places');
+      const result = await axios(`http://localhost:8060/api/places`);
       setData(result.data);
     };
     fetchData();
   }, []);
   return (
     <section>
-      <Search />
+      <Search search={search} />
       {data.map((place, i) => (
         <div className="places">
           <Link to={`/places/${place.id}`}>

@@ -24,7 +24,9 @@ export default function Navigation() {
           </Link>
         </div>
         <div className="navigation__logo media_tablet_desktop">
-          <img src="airbnb-logo.png" alt="" />
+          <Link to="/">
+            <img src="airbnb-logo.png" alt="" />
+          </Link>
         </div>
         <div className="navigation__buttons media_tablet_desktop">
           <div>
