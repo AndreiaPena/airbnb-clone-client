@@ -1,32 +1,88 @@
 header {
-    position: fixed;
-    background-color: #fff;
-    bottom: 0;
-    width: 100vw;
-    border-top: 1px solid rgba(122, 122, 122, 0.507);
-    // @include media(desktop){
-    // top: 0;
-    // }
+  position: fixed;
+  background-color: #fff;
+  bottom: 0;
+  width: 100vw;
+  border-top: 1px solid rgba(122, 122, 122, 0.507);
+  @include media(tablet) {
+    top: 0;
+    height: 12vh;
+    border-bottom: 1px solid rgba(122, 122, 122, 0.507);
   }
-  
-  .navigation {
+  @include media(desktop) {
+    height: 14vh;
+  }
+}
+
+.navigation {
+  display: flex;
+  justify-content: center;
+  @include media(tablet) {
+    border: solid pink 0.5px;
+   display: flex;
+   justify-content: space-between;
+   padding: 0 5%;
+   height: 14vh;
+  }
+  h3 {
+    font-size: 10px;
+    font-weight: 600;
+    color: rgb(102, 101, 101);
+  }
+  &__button {
+    width: 20%;
     display: flex;
-    justify-content: center;
-  
-    h3 {
-      font-size: 10px;
-      font-weight: 600;
-      color: rgb(102, 101, 101);
-    }
-    &__button {
-      width: 20%;
-      display: flex;
-      flex-direction: column;
-      text-align: center;
-      padding-top: 10px;
-      img {
-        width: 5vw;
+    flex-direction: column;
+    text-align: center;
+    padding-top: 10px;
+    img {
+      width: 5vw;
+      @include media(tablet) {
+        width: 2vw;
+      }
+      @include media(desktop) {
+        width: 2vw;
       }
     }
   }
-  
+  &__logo{
+    width: 15%;
+    border: dotted red 1px;
+    display: flex;
+    align-items: center;
+    img{
+      width: 50%;
+    }
+  }
+  &__buttons{
+    width: 30%;
+    border: solid green 1px;
+    display: flex;
+    justify-content: center;
+    div{
+      width: 40%;
+      font-weight: 600;
+      font-size: 14px;
+      border-radius: 50px;
+      border: 1px solid rgba(0, 0, 0, 0.15);
+      box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 2px;
+    }
+  }
+  .media_tablet_desktop{
+    display: none;
+    @include media(tablet) {
+      display: block !important;
+    }
+    @include media(desktop) {
+      display: block !important;
+    }
+  }
+  .media_smartphone{
+    @include media(tablet) {
+      display: none;
+    }
+    @include media(desktop) {
+      display: none;
+    }
+  }
+}

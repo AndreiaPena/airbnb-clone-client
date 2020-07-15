@@ -48,7 +48,7 @@ export default function Routes() {
         </Route>
 
         <Route path="/signin">
-          <Signin />
+          <div>{!state.isAuthenticated ? <Signin /> : <Home />}</div>
         </Route>
 
         <Route path="/places/:id">

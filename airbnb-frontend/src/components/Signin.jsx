@@ -1,9 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import axios from 'axios';
 import { AuthContext } from './Routes';
 
 export const Signin = () => {
-  const { dispatch } = React.useContext(AuthContext);
+  const { dispatch } = useContext(AuthContext);
   const initialState = {
     email: '',
     password: '',
@@ -35,6 +35,7 @@ export const Signin = () => {
       }),
     })
       .then((res) => {
+        console.log(res);
         if (res.status === 200) {
           return res;
         }
@@ -54,39 +55,40 @@ export const Signin = () => {
         });
       });
   };
+  console.log(data);
   return (
     <div className="login-container">
       <div className="card">
         <div className="container">
           <form onSubmit={handleFormSubmit}>
-            <h1>Signin</h1>
+            <h1>Connexion</h1>
 
             <label htmlFor="email">
-              Email Address
               <input
                 type="text"
                 value={data.email}
                 onChange={handleInputChange}
                 name="email"
                 id="email"
+                placeholder="Email"
               />
             </label>
 
             <label htmlFor="password">
-              Password
               <input
                 type="password"
                 value={data.password}
                 onChange={handleInputChange}
                 name="password"
                 id="password"
+                placeholder="Mot de passe"
               />
             </label>
 
             {data.errorMessage && <span className="form-error">{data.errorMessage}</span>}
 
             <button disabled={data.isSubmitting}>
-              {data.isSubmitting ? 'Loading...' : 'Login'}
+              {data.isSubmitting ? 'Loading...' : 'Continuer'}
             </button>
           </form>
         </div>
