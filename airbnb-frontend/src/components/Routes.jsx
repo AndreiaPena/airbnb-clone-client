@@ -13,14 +13,16 @@ const initialState = {
   token: null,
 };
 const reducer = (state, action) => {
-  console.log('ICI ACTION :', action);
+  console.log('ICI ACTION :', action.payload.data.user);
   switch (action.type) {
     case 'SIGNIN':
       localStorage.setItem('token', action.payload.data.token);
+      localStorage.setItem('user', action.payload.data.user);
       return {
         ...state,
         isAuthenticated: true,
         token: action.payload.data.token,
+        user: action.payload.config.user,
       };
     case 'LOGOUT':
       localStorage.clear();
@@ -56,7 +58,7 @@ export default function Routes() {
           <Place />
         </Route>
 
-        <Route path="/bookings">
+        <Route path="/bookings/:id">
           <div>{!state.isAuthenticated ? <Signin /> : <Booking />}</div>
         </Route>
 
