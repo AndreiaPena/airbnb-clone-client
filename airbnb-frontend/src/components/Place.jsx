@@ -4,7 +4,7 @@ import { useParams, Link } from 'react-router-dom';
 import { AuthContext } from './Routes';
 
 export default function Place() {
-  const [Place, setPlace] = useState([]);
+  const [place, setPlace] = useState([]);
   const { id } = useParams();
   const { state: authState } = React.useContext(AuthContext);
 
@@ -18,7 +18,7 @@ export default function Place() {
       setPlace(result.data);
     };
     fetchData();
-  }, [id]);
+  }, [id, authState.token]);
   return (
     <section className="place">
       <div className="place__back">
@@ -27,17 +27,20 @@ export default function Place() {
         </Link>
       </div>
       <div className="place__informations">
-        <img src={Place.pictures} alt="" />
-        <h2>{Place.name}</h2>
-        <h3>{Place['City.name']}</h3>
+        <img src={place.pictures} alt="" />
+        <h2>{place.name}</h2>
+        <h3>{place['City.name']}</h3>
         <hr />
         <div className="place__informations__details">
-          <p className="space">Pour {Place.max_guests} personnes ·</p>
-          <p className="space">{Place.rooms} chambre ·</p>
-          <p>{Place.bathrooms} salle de bain</p>
+          <p className="space">Pour {place.max_guests} personnes ·</p>
+          <p className="space">{place.rooms} chambre ·</p>
+          <p>{place.bathrooms} salle de bain</p>
         </div>
         <hr />
-        <p className="place__informations__description">{Place.description}</p>
+        <p className="place__informations__description">{place.description}</p>
+        <Link className="place__informations__reservation" to="/booking">
+          Réserver le lieu
+        </Link>
       </div>
     </section>
   );

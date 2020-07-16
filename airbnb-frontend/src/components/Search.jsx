@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import axios from 'axios';
 
 export const Search = (props) => {
   const [searchValue, setSearchValue] = useState('');
