@@ -33,7 +33,7 @@ export default function Place() {
         </div>
         <hr />
         <p className="place__informations__description">{place.description}</p>
-        <Link className="place__informations__reservation" to="/booking">
+        <Link className="place__informations__reservation" to="/bookings">
           Réserver le lieu
         </Link>
       </div>
