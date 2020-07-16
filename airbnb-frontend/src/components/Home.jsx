@@ -14,12 +14,9 @@ export default function Home() {
     fetchData();
   };
   useEffect(() => {
-    const fetchData = async () => {
-      const result = await axios(`http://localhost:8060/api/places`);
-      setData(result.data);
-    };
-    fetchData();
+    search('');
   }, []);
+
   return (
     <section>
       <Search search={search} />
