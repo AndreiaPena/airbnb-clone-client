@@ -5,6 +5,7 @@ import Place from './Place';
 import Signup from './Signup';
 import Signin from './Signin';
 import Booking from './Booking';
+import AddPlace from './AddPlace';
 
 export const AuthContext = React.createContext();
 const initialState = {
@@ -52,6 +53,9 @@ export default function Routes() {
 
         <Route path="/signin">
           <div>{!state.isAuthenticated ? <Signin /> : <Home />}</div>
+        </Route>
+        <Route path="/addplace">
+          <AddPlace />
         </Route>
 
         <Route path="/places/:id">
