@@ -55,7 +55,7 @@ export default function Routes() {
           <div>{!state.isAuthenticated ? <Signin /> : <Home />}</div>
         </Route>
         <Route path="/addplace">
-          <AddPlace />
+          <div>{!state.isAuthenticated ? <Signin /> : <AddPlace />}</div>
         </Route>
 
         <Route path="/places/:id">

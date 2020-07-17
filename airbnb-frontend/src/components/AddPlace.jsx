@@ -1,22 +1,22 @@
-import React, { useState} from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 
 export default function Booking() {
   const history = useHistory();
 
- // const { id } = useParams();
+  // const { id } = useParams();
   const userId = localStorage.getItem('user');
   const [inputs, setInputs] = useState({
-      cityName: '',
-      userId,
-      name: '',
-      description: '',
-      rooms: '',
-      bathrooms: '',
-      max_guests: '',
-      price_by_night: '',
-      pictures: '',
+    cityName: '',
+    userId,
+    name: '',
+    description: '',
+    rooms: '',
+    bathrooms: '',
+    max_guests: '',
+    price_by_night: '',
+    pictures: '',
   });
 
   const handleInputChange = (event) => {
@@ -26,7 +26,6 @@ export default function Booking() {
       [event.target.name]: event.target.value,
     }));
   };
-  
 
   const handleFormSubmit = async (event) => {
     event.preventDefault();
@@ -42,13 +41,14 @@ export default function Booking() {
     });
     history.push('/');
   };
-console.log("placce city", inputs);
+  console.log('placce city', inputs);
   return (
-    <div className="login-container">
+    <div className="addPlace-container">
       <div className="card">
         <div className="container">
           <form>
-            <h1>AddPlace</h1>
+            <h1>Gagnez de l'argent en tant qu'hôte Airbnb</h1>
+            <h2>Parlez-nous un peu de votre logement</h2>
 
             <label htmlFor="cityName">
               <input
@@ -57,7 +57,7 @@ console.log("placce city", inputs);
                 onChange={handleInputChange}
                 name="cityName"
                 id="cityName"
-                placeholder="cityName"
+                placeholder="Votre ville"
               />
             </label>
 
@@ -68,29 +68,29 @@ console.log("placce city", inputs);
                 onChange={handleInputChange}
                 name="name"
                 id="name"
-                placeholder="name"
+                placeholder="Nom de l'annonce"
               />
             </label>
 
-             <label htmlFor="description">
+            <label htmlFor="description">
               <input
                 type="text"
                 value={inputs.description}
                 onChange={handleInputChange}
                 name="description"
                 id="description"
-                placeholder="description"
+                placeholder="description de l'annonce"
               />
             </label>
 
-             <label htmlFor="rooms">
+            <label htmlFor="rooms">
               <input
                 type="number"
                 value={inputs.rooms}
                 onChange={handleInputChange}
                 name="rooms"
                 id="rooms"
-                placeholder="rooms"
+                placeholder="Nombre de chambres"
               />
             </label>
 
@@ -101,7 +101,7 @@ console.log("placce city", inputs);
                 onChange={handleInputChange}
                 name="bathrooms"
                 id="bathrooms"
-                placeholder="bathrooms"
+                placeholder="Nombre de salle de bain"
               />
             </label>
 
@@ -112,29 +112,29 @@ console.log("placce city", inputs);
                 onChange={handleInputChange}
                 name="max_guests"
                 id="max_guests"
-                placeholder="max_guests"
+                placeholder="nombres de voyageurs"
               />
             </label>
 
-              <label htmlFor="price_by_night">
+            <label htmlFor="price_by_night">
               <input
                 type="number"
                 value={inputs.price_by_night}
                 onChange={handleInputChange}
                 name="price_by_night"
                 id="price_by_night"
-                placeholder="price_by_night"
+                placeholder="prix par nuit"
               />
             </label>
 
-             <label htmlFor="pictures">
+            <label htmlFor="pictures">
               <input
                 type="text"
                 value={inputs.pictures}
                 onChange={handleInputChange}
                 name="pictures"
                 id="pictures"
-                placeholder="pictures"
+                placeholder="photo de l'annonce (lien URL)"
               />
             </label>
 

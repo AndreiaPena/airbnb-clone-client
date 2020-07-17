@@ -1,14 +1,15 @@
-.login-container {
-  justify-content: center;
+.addPlace-container{
+  justify-content: flex-end;
   display: flex;
   align-items: center;
-  padding-top: 10%;
-  padding-bottom: 5%;
+  padding: 10% 4% 5% 0;
+  background-image: url("https://a0.muscache.com/4ea/air/v2/pictures/9d08d356-59b9-4ac4-9f41-5b9c13c2b211.jpg?t=r:w1440-h960-sfit,e:fjpeg-c75");
   .card {
     padding: 5% 10px;
     width: 80%;
     border: solid rgba(156, 156, 156, 0.473) 0.5px;
-    
+    background-color: white;
+border-radius: 5px;
     @include media(tablet) {
       width: 60%;
     }

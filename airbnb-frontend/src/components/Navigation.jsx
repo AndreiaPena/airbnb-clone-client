@@ -29,17 +29,17 @@ export default function Navigation() {
           </Link>
         </div>
         <div className="navigation__buttons media_tablet_desktop">
-        <div>
+          <div className="navigation__buttons__test">
             <Link to="/addplace">
               <h3>Ajouter une place</h3>
             </Link>
           </div>
-          <div>
+          <div className="navigation__buttons__test">
             <Link to="/signup">
               <h3>Inscription</h3>
             </Link>
           </div>
-          <div>
+          <div className="navigation__buttons__test">
             <Link to="/signin">
               <h3>Connexion</h3>
             </Link>
