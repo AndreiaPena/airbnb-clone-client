@@ -1,13 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import axios from 'axios';
-import { useParams } from 'react-router-dom';
-// import { AuthContext } from './Routes';
+import { useParams, useHistory } from 'react-router-dom';
 
 export default function Booking() {
+  const history = useHistory();
+
   const { id } = useParams();
-  // const { state: authState } = React.useContext(AuthContext);
+  const userId = localStorage.getItem('user');
   const [inputs, setInputs] = useState({
     placeId: id,
+    userId,
     check_in: '',
     check_out: '',
   });
@@ -19,29 +21,21 @@ export default function Booking() {
       [event.target.name]: event.target.value,
     }));
   };
-console.log(inputs)
-  // const handleFormSubmit = async (event) => {
-  //   event.preventDefault();
-  //   await axios.post(`http://localhost:8060/api/bookings`, {
-  //     inputs,
-  //     headers: {
-  //       Authorization: `Bearer ${authState.token}`,
-  //     }
-  //   });
-  // };
+  console.log(inputs);
+
   const handleFormSubmit = async (event) => {
     event.preventDefault();
-    let token = localStorage.getItem("token");
-    console.log(token)
+    const token = localStorage.getItem('token');
     await axios({
-      method: "post",
+      method: 'post',
       headers: {
-        "Content-Type": "application/json",
+        'Content-Type': 'application/json',
         authorization: `Bearer ${token}`,
       },
-      url: "http://localhost:8060/api/bookings",
+      url: 'http://localhost:8060/api/bookings',
       data: inputs,
     });
+    history.push('/');
   };
 
   return (
