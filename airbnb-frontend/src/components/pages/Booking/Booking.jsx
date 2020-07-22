@@ -2,6 +2,8 @@ import React, { useState} from 'react';
 import axios from 'axios';
 import { useParams, useHistory } from 'react-router-dom';
 
+require('./_booking.scss');
+
 export default function Booking() {
   const history = useHistory();
 

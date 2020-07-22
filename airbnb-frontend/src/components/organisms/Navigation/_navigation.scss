@@ -1,0 +1,79 @@
+@import '../../../sass/config/mixins';
+
+.navigation {
+    display: flex;
+    justify-content: center;
+    @include media(tablet) {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 5%;
+      height: 14vh;
+    }
+    h3 {
+      font-size: 10px;
+      font-weight: 600;
+      color: rgb(102, 101, 101);
+    }
+    &__button {
+      width: 20%;
+      display: flex;
+      flex-direction: column;
+      text-align: center;
+      padding-top: 10px;
+      img {
+        width: 5vw;
+        @include media(tablet) {
+          width: 2vw;
+        }
+        @include media(desktop) {
+          width: 2vw;
+        }
+      }
+    }
+    &__logo {
+      margin-left: 2%;
+      width: 15%;
+      display: flex;
+      align-items: center;
+      img {
+        width: 60%;
+      }
+    }
+    &__buttons {
+      width: 60%;
+      div {
+        width: 25%;
+        border-radius: 50px;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 1px 2px;
+        float: left;
+        margin: 5% 0 0 8%;
+      }
+      h3 {
+        font-weight: 600;
+        font-size: 11px;
+        text-align: center;
+        @include media(desktop){
+          font-size: 14px;
+        }
+      }
+    }
+    .media_tablet_desktop {
+      display: none;
+      @include media(tablet) {
+        display: block !important;
+      }
+      @include media(desktop) {
+        display: block !important;
+      }
+    }
+    .media_smartphone {
+      @include media(tablet) {
+        display: none;
+      }
+      @include media(desktop) {
+        display: none;
+      }
+    }
+  }
+  

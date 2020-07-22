@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+require('./_navigation.scss');
+
 export default function Navigation() {
   return (
     <div>

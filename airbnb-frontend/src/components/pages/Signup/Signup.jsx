@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 
+require('./_signup.scss');
+
 export default function Signup() {
   const history = useHistory();
 

@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
 
+require('./_search.scss');
+
 export const Search = (props) => {
   const [searchValue, setSearchValue] = useState('');
 

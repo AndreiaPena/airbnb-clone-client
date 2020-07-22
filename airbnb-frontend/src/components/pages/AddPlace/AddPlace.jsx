@@ -2,6 +2,8 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 
+require('./_addplace.scss');
+
 export default function Booking() {
   const history = useHistory();
 

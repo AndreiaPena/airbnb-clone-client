@@ -1,0 +1,17 @@
+@import '../../../sass/config/mixins';
+
+header {
+  position: fixed;
+  background-color: #fff;
+  bottom: 0;
+  width: 100vw;
+  border-top: 1px solid rgba(122, 122, 122, 0.507);
+  @include media(tablet) {
+    top: 0;
+    height: 12vh;
+    border-bottom: 1px solid rgba(122, 122, 122, 0.507);
+  }
+  @include media(desktop) {
+    height: 14vh;
+  }
+}
